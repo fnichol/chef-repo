@@ -25,6 +25,10 @@
 
 include_recipe "ruby_enterprise"
 
+package "libcurl4-openssl-dev" do
+  action :install
+end
+
 ree_gem "passenger" do
   version node[:passenger_enterprise][:version]
 end
