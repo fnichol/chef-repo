@@ -9,6 +9,7 @@ Installation
 ============
 
 git clone git://github.com/fnichol/chef-repo.git /var/chef-solo
+(cd /var/chef-solo && git submodule init && git submodule update)
 
 Repository Directories
 ======================
