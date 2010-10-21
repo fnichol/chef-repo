@@ -8,8 +8,8 @@ While we prefer Git, and make this repository available via GitHub, you are welc
 Installation
 ============
 
-git clone git://github.com/fnichol/chef-repo.git /var/chef-solo
-(cd /var/chef-solo && git submodule init && git submodule update)
+    git clone git://github.com/fnichol/chef-repo.git /var/chef-solo
+    (cd /var/chef-solo && git submodule init && git submodule update)
 
 Repository Directories
 ======================
