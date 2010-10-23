@@ -7,3 +7,6 @@
 [submodule "cookbooks/nginx_http_auth_pam"]
 	path = cookbooks/nginx_http_auth_pam
 	url = git://github.com/fnichol/chef-nginx_http_auth_pam.git
+[submodule "cookbooks/nginx"]
+	path = cookbooks/nginx
+	url = git://github.com/fnichol/chef-nginx.git
