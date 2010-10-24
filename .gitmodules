@@ -10,3 +10,6 @@
 [submodule "cookbooks/nginx"]
 	path = cookbooks/nginx
 	url = git://github.com/fnichol/chef-nginx.git
+[submodule "cookbooks/mysql"]
+	path = cookbooks/mysql
+	url = git://github.com/fnichol/chef-mysql.git
