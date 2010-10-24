@@ -63,3 +63,22 @@ task :bundle_cookbook, :cookbook do |t, args|
 
   FileUtils.rm_rf temp_dir
 end
+
+desc "Update your repository from source control"
+task :update do
+
+  case $vcs
+  when :git
+    puts "** Updating your git repository submodules"
+    pull = false
+    IO.foreach(File.join(TOPDIR, ".git", "config")) do |line|
+      pull = true if line =~ /\[remote "origin"\]/
+    end
+    if pull
+      sh %{git submodule init && git submodule update} 
+    else
+      puts "* Skipping git pull, no origin specified"
+    end
+  end
+end
+
