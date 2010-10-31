@@ -16,3 +16,6 @@
 [submodule "cookbooks/openssl"]
 	path = cookbooks/openssl
 	url = git://github.com/fnichol/chef-openssl.git
+[submodule "cookbooks/apt"]
+	path = cookbooks/apt
+	url = git://github.com/fnichol/chef-apt.git
