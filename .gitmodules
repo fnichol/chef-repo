@@ -24,4 +24,4 @@
 	url = git://github.com/fnichol/chef-git.git
 [submodule "cookbooks/bashrc"]
 	path = cookbooks/bashrc
-	url = git://github.com/fnichol/bashrc.git
+	url = git://github.com/fnichol/chef-bashrc.git
