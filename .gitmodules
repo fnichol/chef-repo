@@ -22,3 +22,6 @@
 [submodule "cookbooks/git"]
 	path = cookbooks/git
 	url = git://github.com/fnichol/chef-git.git
+[submodule "cookbooks/bashrc"]
+	path = cookbooks/bashrc
+	url = git://github.com/fnichol/bashrc.git
