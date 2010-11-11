@@ -25,3 +25,6 @@
 [submodule "cookbooks/bashrc"]
 	path = cookbooks/bashrc
 	url = git://github.com/fnichol/chef-bashrc.git
+[submodule "cookbooks/hostname"]
+	path = cookbooks/hostname
+	url = git://github.com/fnichol/chef-hostname.git
