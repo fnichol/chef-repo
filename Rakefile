@@ -76,6 +76,7 @@ task :update do
     end
     if pull
       sh %{git submodule init && git submodule update} 
+      sh %{(cd cookbooks && git submodule init && git submodule update)} 
     else
       puts "* Skipping git pull, no origin specified"
     end
