@@ -8,5 +8,10 @@ run_list(
   "recipe[rvm_passenger::nginx]"
 )
 default_attributes "nginx" => {
-  "extra_configure_flags" => [ "--with-http_sub_module" ]
-}
+    "extra_configure_flags" => [ "--with-http_sub_module" ]
+  },
+  "rvm_passenger" => {
+    "version" => "3.0.0",
+    "rvm_ruby" => "ree-1.8.7-2010.02",
+    "root_path" => "/usr/local/rvm/gems/ree-1.8.7-2010.02/gems/passenger-3.0.0"
+  }
