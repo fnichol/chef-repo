@@ -7,7 +7,7 @@ run_list(
   "recipe[xbmc::apt_repository]"
 )
 override_attributes :rvm => {
-  :rubies => ["1.8.7-p302"],
-  :default_ruby => "1.8.7-p302"
+  :rubies => ["ruby-1.8.7-p302"],
+  :default_ruby => "ruby-1.8.7-p302"
 }
 
