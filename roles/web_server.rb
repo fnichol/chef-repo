@@ -7,7 +7,7 @@ run_list(
   "recipe[rvm_passenger]",
   "recipe[rvm_passenger::nginx]"
 )
-default_attributes "nginx" => {
+override_attributes "nginx" => {
     "extra_configure_flags" => [ "--with-http_sub_module" ]
   },
   "rvm_passenger" => {

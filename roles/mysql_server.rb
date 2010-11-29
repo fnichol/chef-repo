@@ -6,6 +6,6 @@ run_list(
   "role[base_server]",
   "recipe[mysql::server]"
 )
-default_attributes "mysql" => {
+override_attributes "mysql" => {
   "enable_iptables" => "yes"
 }
