@@ -6,7 +6,10 @@ run_list(
   "role[base_server]"
 )
 override_attributes :rvm => {
-  :rubies => ["ruby-1.8.7"],
-  :default_ruby => "ruby-1.8.7"
-}
+    :rubies => ["ruby-1.8.7"],
+    :default_ruby => "ruby-1.8.7"
+  },
+  :mysql => {
+    :iptables_allow => "enable"
+  }
 
