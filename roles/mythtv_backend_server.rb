@@ -3,7 +3,8 @@ description "A backend instance of MythTV for recording/livetv"
 run_list(
   "role[base]",
   "role[ubuntu]",
-  "role[base_server]"
+  "role[base_server]",
+  "recipe[mythtv::master_backend]"
 )
 override_attributes :rvm => {
     :rubies => ["ruby-1.8.7"],
