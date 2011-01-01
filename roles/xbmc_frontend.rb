@@ -7,7 +7,7 @@ run_list(
   "recipe[xbmc::live]"
 )
 override_attributes :rvm => {
-  :rubies => ["ruby-1.8.7-p302"],
-  :default_ruby => "ruby-1.8.7-p302"
+  :rubies => ["ruby-1.8.7"],
+  :default_ruby => "ruby-1.8.7"
 }
 
