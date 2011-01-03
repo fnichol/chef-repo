@@ -1,9 +1,7 @@
 name "xbmc_frontend"
 description "An Ubuntu Linux frontend for XBMC"
 run_list(
-  "role[base]",
-  "role[ubuntu]",
-  "role[base_server]",
+  "role[server]",
   "recipe[xbmc::live]"
 )
 default_attributes :rvm => {
