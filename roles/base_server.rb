@@ -9,8 +9,7 @@ run_list(
 )
 default_attributes(
   :rvm => {
-    :rubies => ["ree-1.8.7-2010.02"],
-    :default_ruby => "ree-1.8.7-2010.02"
+    :default_ruby => "ree-1.8.7"
   },
   :iptables => {
     :status => "enable"
