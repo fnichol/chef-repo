@@ -5,10 +5,6 @@ run_list(
   "recipe[mythtv::master_backend]"
 )
 default_attributes(
-  :rvm => {
-    :rubies => ["ruby-1.8.7"],
-    :default_ruby => "ruby-1.8.7"
-  },
   :mysql => {
     :iptables_allow => "enable"
   }
