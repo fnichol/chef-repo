@@ -1,10 +1,7 @@
 name "web_server"
 description "A web server deployment with nginx/passenger."
 run_list(
-  "role[base]",
-  "role[ubuntu]",
-  "role[base_server]",
-  "recipe[rvm_passenger]",
+  "role[server]",
   "recipe[rvm_passenger::nginx]"
 )
 override_attributes "nginx" => {
