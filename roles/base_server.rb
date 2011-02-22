@@ -9,7 +9,7 @@ run_list(
 )
 default_attributes(
   :rvm => {
-    :default_ruby => "ruby-1.9.2-p136"
+    :default_ruby => "ruby-1.9.2-p180"
   },
   :iptables => {
     :status => "enable"
