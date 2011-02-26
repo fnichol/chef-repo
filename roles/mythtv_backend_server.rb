@@ -6,6 +6,6 @@ run_list(
 )
 default_attributes(
   :mysql => {
-    :iptables_allow => "enable"
+    :iptables_allow           => "enable"
   }
 )
