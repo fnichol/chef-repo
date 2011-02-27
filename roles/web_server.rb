@@ -2,7 +2,7 @@ name "web_server"
 description "A web server deployment with nginx/passenger."
 run_list(
   "role[server]",
-  "recipe[rvm_passenger::nginx]"
+  "recipe[nginx::source]"
 )
 override_attributes(
   :nginx => {
