@@ -7,8 +7,8 @@ run_list(
 override_attributes(
   :jenkins => {
     :iptables_allow           => "disable",
-    :nginx => {
-      :proxy                  => "enable"
+    :http_proxy => {
+      :variant                => "nginx"
     },
     :server => {
       :plugins => [
