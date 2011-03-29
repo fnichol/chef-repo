@@ -1,7 +1,6 @@
 name "base_server"
 description "The base role for all server nodes"
 run_list(
-  "recipe[iptables]",
   "recipe[openssh]",
   "recipe[users]",
   "recipe[sudo]",
