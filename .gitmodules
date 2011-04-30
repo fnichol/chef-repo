@@ -1,0 +1,3 @@
+[submodule "cookbooks/bashrc"]
+	path = cookbooks/bashrc
+	url = git://github.com/fnichol/chef-bashrc.git
