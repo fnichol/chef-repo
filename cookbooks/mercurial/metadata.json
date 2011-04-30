@@ -1,23 +1,10 @@
 {
-  "license": "Apache 2.0",
-  "recipes": {
-    "mercurial": ""
-  },
-  "conflicting": {
-
-  },
-  "dependencies": {
-
-  },
+  "version": "0.7.0",
   "providing": {
-    "mercurial": [
-
-    ]
   },
+  "maintainer": "Opscode, Inc.",
   "long_description": "",
-  "description": "Installs mercurial",
   "replacing": {
-
   },
   "platforms": {
     "debian": [
@@ -27,17 +14,22 @@
 
     ]
   },
-  "version": "0.7.0",
-  "maintainer": "Opscode, Inc.",
+  "license": "Apache 2.0",
+  "maintainer_email": "cookbooks@opscode.com",
+  "groupings": {
+  },
   "recommendations": {
-
+  },
+  "attributes": {
+  },
+  "description": "Installs mercurial",
+  "suggestions": {
+  },
+  "dependencies": {
   },
   "name": "mercurial",
-  "maintainer_email": "cookbooks@opscode.com",
-  "attributes": {
-
+  "conflicting": {
   },
-  "suggestions": {
-
+  "recipes": {
   }
 }
