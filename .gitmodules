@@ -1,3 +1,6 @@
 [submodule "cookbooks/bashrc"]
 	path = cookbooks/bashrc
 	url = git://github.com/fnichol/chef-bashrc.git
+[submodule "cookbooks/platform_packages"]
+	path = cookbooks/platform_packages
+	url = git://github.com/fnichol/chef-platform_packages.git
