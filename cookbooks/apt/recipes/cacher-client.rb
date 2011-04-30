@@ -17,7 +17,20 @@
 # limitations under the License.
 #
 
-servers = search(:node, 'recipes:apt\:\:cacher') || []
+if Chef::Config[:solo]
+  servers = []
+  unless node['apt']['server']['ipaddress'].nil?
+    class DummyServer
+      attr_reader :ipaddress
+      def initialize(ipaddress) ; @ipaddress = ipaddress ; end
+      def to_s ; "node[#{@ipaddress}]" ; end
+    end
+
+    servers << DummyServer.new(node['apt']['server']['ipaddress'])
+  end
+else
+  servers = search(:node, 'recipes:apt\:\:cacher') || []
+end
 if servers.length > 0
   Chef::Log.info("apt-cacher server found on #{servers[0]}.")
   proxy = "Acquire::http::Proxy \"http://#{servers[0].ipaddress}:3142\";"
