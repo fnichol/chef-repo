@@ -44,9 +44,25 @@ users.each do |u|
     action :nothing
   end
 
+  if !u['create_group'].nil? && u['create_group'] == true
+    create_group = true
+  else
+    create_group = false
+  end
+
+  if create_group
+    group u['id'] do
+      gid u['uid'].to_i
+    end
+  end
+
   user u['id'] do
     uid u['uid']
-    gid u['gid']
+    if create_group
+      gid u['id']
+    else
+      gid u['gid']
+    end
     shell u['shell']
     comment u['comment']
     supports :manage_home => true
@@ -54,16 +70,34 @@ users.each do |u|
     notifies :create, "ruby_block[reset group list]", :immediately
   end
 
+  directory "#{home_dir}" do
+    owner u['id']
+    if create_group
+      group u['id']
+    else
+      group u['gid'] || u['id']
+    end
+    mode "2755"
+  end
+
   directory "#{home_dir}/.ssh" do
     owner u['id']
-    group u['gid'] || u['id']
+    if create_group
+      group u['id']
+    else
+      group u['gid'] || u['id']
+    end
     mode "0700"
   end
 
   template "#{home_dir}/.ssh/authorized_keys" do
     source "authorized_keys.erb"
     owner u['id']
-    group u['gid'] || u['id']
+    if create_group
+      group u['id']
+    else
+      group u['gid'] || u['id']
+    end
     mode "0600"
     variables :ssh_keys => u['ssh_keys']
   end
