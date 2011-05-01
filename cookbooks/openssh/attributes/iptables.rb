@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: openssh
-# Attributes:: default
+# Attributes:: iptables
 #
 # Copyright 2010, Fletcher Nichol
 #
@@ -17,9 +17,4 @@
 # limitations under the License.
 #
 
-default[:openssh][:port]                = [ "22" ]
-default[:openssh][:listen_address]      = [ "0.0.0.0" ]
-
-default[:openssh][:permit_root_login]   = "yes"
-default[:openssh][:x11_forwarding]      = "no"
-
+default[:openssh][:iptables_allow]      = true

@@ -64,17 +64,3 @@ when "ubuntu","suse"
     notifies :restart, "service[ssh]", :immediately
   end
 end
-
-case node[:platform]
-when "redhat","centos","debian","ubuntu"
-  include_recipe "iptables"
-
-  iptables_rule "port_ssh" do
-    if node[:openssh][:iptables_allow] == "disable"
-      enable false
-    else
-      enable true
-    end
-  end
-end
-

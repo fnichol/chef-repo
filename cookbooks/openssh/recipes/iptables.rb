@@ -1,8 +1,8 @@
 #
 # Cookbook Name:: openssh
-# Attributes:: default
+# Recipe:: default
 #
-# Copyright 2010, Fletcher Nichol
+# Copyright 2011, Fletcher Nichol
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,9 +17,11 @@
 # limitations under the License.
 #
 
-default[:openssh][:port]                = [ "22" ]
-default[:openssh][:listen_address]      = [ "0.0.0.0" ]
+if platform?(%w{ redhat centos debian ubuntu })
+  include_recipe "iptables"
 
-default[:openssh][:permit_root_login]   = "yes"
-default[:openssh][:x11_forwarding]      = "no"
+  iptables_rule "port_ssh" do
+    enable  node[:openssh][:iptables_allow]
+  end
+end
 
