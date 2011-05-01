@@ -30,6 +30,10 @@ when "centos","redhat","fedora"
       action :install
     end
   end
+when "suse"
+  package "gcc-c++" do
+    action :install
+  end
 end
 
 package "autoconf" do
