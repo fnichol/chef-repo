@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+include_recipe "iptables"
+
 packages = case node[:platform]
   when "centos","redhat","fedora"
     %w{openssh-clients openssh}
@@ -71,10 +73,10 @@ when "redhat","centos","debian","ubuntu"
   include_recipe "iptables"
 
   iptables_rule "port_ssh" do
-    if node[:openssh][:enable_iptables] == "yes"
-      enable true
-    else
+    if node[:openssh][:iptables_allow] == "disable"
       enable false
+    else
+      enable true
     end
   end
 end
