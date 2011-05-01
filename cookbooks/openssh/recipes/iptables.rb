@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: openssh
-# Recipe:: default
+# Recipe:: iptables
 #
 # Copyright 2011, Fletcher Nichol
 #
