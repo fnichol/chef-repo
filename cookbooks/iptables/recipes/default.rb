@@ -24,12 +24,37 @@ execute "rebuild-iptables" do
   action :nothing
 end
 
+execute "disable-iptables" do
+  command "/usr/sbin/disable-iptables"
+  action :nothing
+end
+
 directory "/etc/iptables.d" do
   action :create
 end
 
+directory "/etc/iptables" do
+  action :create
+end
+
+file "/etc/iptables/general" do
+  if node[:iptables][:status] == "disable"
+    action    :delete
+    notifies  :run, "execute[disable-iptables]"
+  else
+    action    :create
+    mode      "0644"
+    notifies  :run, "execute[rebuild-iptables]"
+  end
+end
+
 cookbook_file "/usr/sbin/rebuild-iptables" do
   source "rebuild-iptables"
+  mode 0755
+end
+
+cookbook_file "/usr/sbin/disable-iptables" do
+  source "disable-iptables"
   mode 0755
 end
 

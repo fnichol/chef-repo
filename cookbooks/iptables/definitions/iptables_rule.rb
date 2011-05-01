@@ -19,6 +19,10 @@
 
 define :iptables_rule, :enable => true, :source => nil, :variables => {} do
   template_source = params[:source] ? params[:source] : "#{params[:name]}.erb"
+
+  unless node[:iptables][:enabled]
+    params[:enable] = false
+  end
   
   template "/etc/iptables.d/#{params[:name]}" do
     source template_source
