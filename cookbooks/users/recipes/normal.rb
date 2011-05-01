@@ -30,6 +30,14 @@ node[:users][:normal].each do |u|
 
   home_dir = "/home/#{u['id']}"
 
+  # fixes CHEF-1699
+  ruby_block "reset group list" do
+    block do
+      Etc.endgrent
+    end
+    action :nothing
+  end
+
   if !u['create_group'].nil? && u['create_group'] == true
     create_group = true
   else
