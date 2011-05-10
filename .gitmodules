@@ -10,3 +10,6 @@
 [submodule "cookbooks/vagrant_extras"]
 	path = cookbooks/vagrant_extras
 	url = git://github.com/fnichol/chef-vagrant_extras.git
+[submodule "cookbooks/rvm_passenger"]
+	path = cookbooks/rvm_passenger
+	url = git://github.com/fnichol/chef-rvm_passenger.git
